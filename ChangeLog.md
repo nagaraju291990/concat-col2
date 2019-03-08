@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ## [1.0.0] - 2019-02-27
+### Changed
+- Commented lower case conversion to support WX notation
+
+## [1.0.0] - 2019-02-27
 ### Added
 - Script to 2nd column of tab seperated file into commas when their respective column1 matches.
 ### Changed
