@@ -1,11 +1,11 @@
 #Program to read a file(tab seperated) and if column1 is repeated more than once its corresponding column2 is appended with existing one
-#for ex: src[TAB]tgt1 src[TAB]tgt2=> src[TAB]tgt1, tgt2
+#for ex srcTABtgt1 srcTABtgt2=> srcTABtgt1, tgt2
 
 #!/usr/bin/python3
 import re
 import sys
 
-#read file 
+#read file
 file=open(sys.argv[1],"r+")
 
 
@@ -20,7 +20,7 @@ for line in file.read().split("\n"):
         break
 
     #cleaning corpus
-    line = line.lower() #convert to lowercase
+    #line = line.lower() #convert to lowercase
     line = re.sub(r'\u00A0'," ",line,flags=re.MULTILINE)
     line = re.sub(r'^ *',"",line,flags=re.MULTILINE)
     line = re.sub(r' *$',"",line,flags=re.MULTILINE)
@@ -38,7 +38,7 @@ for line in file.read().split("\n"):
     else:
         tmp = dict[col1]
         tmp2 = tmp + "," + col2
-        tmp2 = re.sub(r' ?, ?', ',', tmp2, flags=re.IGNORECASE)
+        tmp2 = re.sub(r' ?, ?', ',', tmp2)
         my_list = tmp2.split(",")
         my_list = list(set(my_list))
         dict[col1] = ', '.join(my_list)
