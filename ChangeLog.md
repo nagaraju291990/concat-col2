@@ -6,6 +6,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.0.1] - 2020-02-06
+### Changed
+- In concatenation 2nd column elements are made unique
+
 ## [1.0.0] - 2019-02-27
 ### Changed
 - Commented lower case conversion to support WX notation

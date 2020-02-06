@@ -8,13 +8,15 @@ import sys
 #read file
 file=open(sys.argv[1],"r+")
 
+##delimiter
+delimiter = sys.argv[2]
 
 #dictionary to save column1 as keys and column2 as values
 dict={}
 
 for line in file.read().split("\n"):
 #split("\n") will split according to newline
-    #print (line)
+    print (line)
 
     if(line == ""):
         break
@@ -37,11 +39,13 @@ for line in file.read().split("\n"):
         dict[col1] = col2
     else:
         tmp = dict[col1]
-        tmp2 = tmp + "," + col2
-        tmp2 = re.sub(r' ?, ?', ',', tmp2)
-        my_list = tmp2.split(",")
+        tmp2 = tmp + delimiter + col2
+        tmp2 = re.sub(r' ?'+delimiter+' ?', delimiter, tmp2)
+        my_list = tmp2.split(delimiter)
         my_list = list(set(my_list))
-        dict[col1] = ', '.join(my_list)
+        #print(my_list);
+        dict[col1] = delimiter.join(my_list)
+        #dict[col1] = tmp2
         #print(line)
 
 
